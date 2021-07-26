@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Security.Principal;
+
 
 namespace Lesson_1
 {
@@ -6,7 +8,9 @@ namespace Lesson_1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string userName = Environment.UserName;
+
+            Console.WriteLine("Hello! " + userName +" "+ DateTime.Now);
         }
     }
 }
