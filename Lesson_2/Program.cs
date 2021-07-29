@@ -43,6 +43,12 @@ namespace Lesson_2
                 "september","octamber","november","december" };
              Console.WriteLine("input month  number: ");
             int m_number = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("input wather temperature: ");
+            int temperature = Convert.ToInt32(Console.ReadLine());
+            if (temperature > 0 && m_number<=9)
+            {
+                Console.WriteLine("Dojdlivaya zima!");
+            }
             Console.WriteLine("input month number: " + month_array[m_number-1]);
 
 
@@ -66,7 +72,6 @@ namespace Lesson_2
                 s = products_p[p];
                 p++;
             }
-
             Console.WriteLine("Total: " + s);
 
 
