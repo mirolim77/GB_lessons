@@ -52,7 +52,25 @@ namespace Lesson_2
             {
                 number = false;
             }
-            Console.WriteLine("input number is even? : " + number.ToString());
+            Console.WriteLine("input number is even? : " + number.ToString() + '\n');
+
+
+            int[] products_p = { 11, 55, 66, 99, 77, 99, 997 };
+            string[] product_names = { "apple", "milk", "meat", "apelsin", "suger", "bread", "martini" };
+            Console.WriteLine("Welcome to Supermarket ;)");
+            Console.WriteLine("Date: " + DateTime.Now);
+            int p = 0; int s = 0;
+            foreach (var item in product_names)
+            {
+                Console.WriteLine("Product name: " + item + " --Coast: "+ Convert.ToString(products_p[p]) ); 
+                s = products_p[p];
+                p++;
+            }
+
+            Console.WriteLine("Total: " + s);
+
+
+
 
 
 
