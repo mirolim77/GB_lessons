@@ -44,12 +44,24 @@ namespace Lesson_2
              Console.WriteLine("input month  number: ");
             int m_number = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("input month number: " + month_array[m_number-1]);
-            
-            
 
-             
-             
-             
+
+            Console.WriteLine("check number of even");
+            int number_entered= Convert.ToInt32(Console.ReadLine()); bool number= true;
+            if (number_entered % 2!=0)
+            {
+                number = false;
+            }
+            Console.WriteLine("input number is even? : " + number.ToString());
+
+
+
+
+
+
+
+
+
 
 
         }
