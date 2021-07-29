@@ -29,12 +29,29 @@ namespace Lesson_2
                 }
 
             }
-            catch (Exception)
+            catch (System.FormatException exception)
             {
-                Console.WriteLine("input must digitel!");
-                throw;
+                
+                Console.WriteLine("input must be digitel!");
+                 // throw;
             }
+
+
+
             
+            string []month_array= {"jenuary","fevral","mart","april","may","june","july","avgust",
+                "september","octamber","november","december" };
+             Console.WriteLine("input month  number: ");
+            int m_number = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("input month number: " + month_array[m_number-1]);
+            
+            
+
+             
+             
+             
+
+
         }
     }
 }
