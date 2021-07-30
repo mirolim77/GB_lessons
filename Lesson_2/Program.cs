@@ -75,8 +75,19 @@ namespace Lesson_2
             Console.WriteLine("Total: " + s);
 
 
+            //mask
+           int work_days= 0b011111;
 
+            int Monday = 0b010111;
+            int Tuesday = 0b010111;
+            int Wednesday = 0b010111;
+            int Thursday = 0b010111;
+            int Friday = 0b010111;
+            int Saturday = 0b010111;
+            int Sunday = 0b010111;
 
+            int office_1 = work_days  & Tuesday & Wednesday & Thursday & Friday;
+            int office_2 = work_days & Monday & Tuesday & Wednesday & Thursday & Friday & Saturday & Sunday;
 
 
 
