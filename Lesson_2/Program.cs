@@ -20,8 +20,8 @@ namespace Lesson_2
 
                 if (average % 2 == 0)
                 {
-                     double  d_average = (double.Parse(Temp[0]) + double.Parse(Temp[1])) / 2;
-                    Console.WriteLine("average temperature is: " + d_average  + " C");
+                    double d_average = (double.Parse(Temp[0]) + double.Parse(Temp[1])) / 2;
+                    Console.WriteLine("average temperature is: " + d_average + " C");
                 }
                 else
                 {
@@ -31,30 +31,30 @@ namespace Lesson_2
             }
             catch (System.FormatException exception)
             {
-                
+
                 Console.WriteLine("input must be digitel!");
-                 // throw;
+                // throw;
             }
 
 
 
-            
-            string []month_array= {"jenuary","fevral","mart","april","may","june","july","avgust",
+
+            string[] month_array = {"jenuary","fevral","mart","april","may","june","july","avgust",
                 "september","octamber","november","december" };
-             Console.WriteLine("input month  number: ");
+            Console.WriteLine("input month  number: ");
             int m_number = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("input wather temperature: ");
             int temperature = Convert.ToInt32(Console.ReadLine());
-            if (temperature > 0 && m_number<=9)
+            if (temperature > 0 && m_number <= 9)
             {
                 Console.WriteLine("Dojdlivaya zima!");
             }
-            Console.WriteLine("input month number: " + month_array[m_number-1]);
+            Console.WriteLine("input month number: " + month_array[m_number - 1]);
 
 
             Console.WriteLine("check number of even");
-            int number_entered= Convert.ToInt32(Console.ReadLine()); bool number= true;
-            if (number_entered % 2!=0)
+            int number_entered = Convert.ToInt32(Console.ReadLine()); bool number = true;
+            if (number_entered % 2 != 0)
             {
                 number = false;
             }
@@ -68,7 +68,7 @@ namespace Lesson_2
             int p = 0; int s = 0;
             foreach (var item in product_names)
             {
-                Console.WriteLine("Product name: " + item + " --Coast: "+ Convert.ToString(products_p[p]) ); 
+                Console.WriteLine("Product name: " + item + " --Coast: " + Convert.ToString(products_p[p]));
                 s = products_p[p];
                 p++;
             }
@@ -76,7 +76,7 @@ namespace Lesson_2
 
 
             //mask
-           int work_days= 0b011111;
+            int work_days = 0b011111;
 
             int Monday = 0b010111;
             int Tuesday = 0b010111;
@@ -86,7 +86,7 @@ namespace Lesson_2
             int Saturday = 0b010111;
             int Sunday = 0b010111;
 
-            int office_1 = work_days  & Tuesday & Wednesday & Thursday & Friday;
+            int office_1 = work_days & Tuesday & Wednesday & Thursday & Friday;
             int office_2 = work_days & Monday & Tuesday & Wednesday & Thursday & Friday & Saturday & Sunday;
 
 
