@@ -30,7 +30,7 @@ namespace Lesson_2
                 }
 
             }
-            catch (System.FormatException exception)
+            catch (System.FormatException)
             {
 
                 Console.WriteLine("input must be digitel!");
@@ -48,11 +48,11 @@ namespace Lesson_2
             int temperature = Convert.ToInt32(Console.ReadLine());
             if (temperature > 0 && m_number >= 9)
             {
-                Console.WriteLine("input month number: " + month_array[m_number - 1] + ": Dojdlivaya zima!" + '\n');
+                Console.WriteLine("input month number: " + month_array[m_number - 1] + ": Rainy winter!" + '\n');
             }
             else
             {
-                Console.WriteLine("input month number: " + month_array[m_number - 1]  + ": Konkretniy zima!" + '\n');
+                Console.WriteLine("input month number: " + month_array[m_number - 1]  + ": Another season!" + '\n');
             }
 
 
@@ -67,7 +67,7 @@ namespace Lesson_2
 
             int[] products_p = { 11, 55, 66, 99, 77, 99, 997 };
             string[] product_names = { "apple", "milk", "meat", "apelsin", "suger", "bread", "martini" };
-            Console.WriteLine("Welcome to Supermarket ;)");
+            Console.WriteLine("Welcome to Supermarket ;)" + '\n'+ "---------------------------------------------------------------") ;
             Console.WriteLine("Date: " + DateTime.Now);
             int p = 0; int s = 0;
             foreach (var item in product_names)
@@ -76,15 +76,15 @@ namespace Lesson_2
                 s = products_p[p];
                 p++;
             }
-            Console.WriteLine("Total: " + s + '\n');
+            Console.WriteLine("Total: " + s + '\n'+ "---------------------------------------------------------------"+'\n');
 
 
             //mask
             int work_days = 0b011111;
 
-            int Monday = 0b010111;
-            int Tuesday = 0b010111;
-            int Wednesday = 0b010111;
+            int Monday = 0b010001;
+            int Tuesday = 0b010100;
+            int Wednesday = 0b010000;
             int Thursday = 0b010111;
             int Friday = 0b010111;
             int Saturday = 0b010111;
@@ -103,5 +103,18 @@ namespace Lesson_2
 
 
         }
+
+        public enum week_days {
+            Monday = 0b010001,
+            Tuesday = 0b010100,
+            Wednesday = 0b010000,
+            Thursday = 0b010111,
+            Friday = 0b010111,
+            Saturday = 0b010111,
+            Sunday = 0b010111,
+        }
+
+
+
     }
 }
