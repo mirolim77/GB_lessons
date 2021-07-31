@@ -20,12 +20,13 @@ namespace Lesson_2
 
                 if (average % 2 == 0)
                 {
-                    double d_average = (double.Parse(Temp[0]) + double.Parse(Temp[1])) / 2;
-                    Console.WriteLine("average temperature is: " + d_average + " C");
+                    Console.WriteLine("average temperature isss: " + average + " C" + '\n');
+                    
                 }
                 else
                 {
-                    Console.WriteLine("average temperature isss: " + average + " C");
+                    double d_average = (double.Parse(Temp[0]) + double.Parse(Temp[1])) / 2;
+                    Console.WriteLine("average temperature is: " + d_average + " C" + '\n');
                 }
 
             }
@@ -42,14 +43,17 @@ namespace Lesson_2
             string[] month_array = {"jenuary","fevral","mart","april","may","june","july","avgust",
                 "september","octamber","november","december" };
             Console.WriteLine("input month  number: ");
-            int m_number = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("input wather temperature: ");
+            var m_number = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("input AVG wather temperature: ");
             int temperature = Convert.ToInt32(Console.ReadLine());
-            if (temperature > 0 && m_number <= 9)
+            if (temperature > 0 && m_number >= 9)
             {
-                Console.WriteLine("Dojdlivaya zima!");
+                Console.WriteLine("input month number: " + month_array[m_number - 1] + ": Dojdlivaya zima!" + '\n');
             }
-            Console.WriteLine("input month number: " + month_array[m_number - 1]);
+            else
+            {
+                Console.WriteLine("input month number: " + month_array[m_number - 1]  + ": Konkretniy zima!" + '\n');
+            }
 
 
             Console.WriteLine("check number of even");
@@ -72,7 +76,7 @@ namespace Lesson_2
                 s = products_p[p];
                 p++;
             }
-            Console.WriteLine("Total: " + s);
+            Console.WriteLine("Total: " + s + '\n');
 
 
             //mask
