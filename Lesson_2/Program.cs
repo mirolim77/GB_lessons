@@ -21,7 +21,7 @@ namespace Lesson_2
                 if (average % 2 == 0)
                 {
                     Console.WriteLine("average temperature isss: " + average + " C" + '\n');
-                    
+
                 }
                 else
                 {
@@ -52,7 +52,7 @@ namespace Lesson_2
             }
             else
             {
-                Console.WriteLine("input month number: " + month_array[m_number - 1]  + ": Another season!" + '\n');
+                Console.WriteLine("input month number: " + month_array[m_number - 1] + ": Another season!" + '\n');
             }
 
 
@@ -67,7 +67,7 @@ namespace Lesson_2
 
             int[] products_p = { 11, 55, 66, 99, 77, 99, 997 };
             string[] product_names = { "apple", "milk", "meat", "apelsin", "suger", "bread", "martini" };
-            Console.WriteLine("Welcome to Supermarket ;)" + '\n'+ "---------------------------------------------------------------") ;
+            Console.WriteLine("Welcome to Supermarket ;)" + '\n' + "---------------------------------------------------------------");
             Console.WriteLine("Date: " + DateTime.Now);
             int p = 0; int s = 0;
             foreach (var item in product_names)
@@ -76,22 +76,10 @@ namespace Lesson_2
                 s = products_p[p];
                 p++;
             }
-            Console.WriteLine("Total: " + s + '\n'+ "---------------------------------------------------------------"+'\n');
+            Console.WriteLine("Total: " + s + '\n' + "---------------------------------------------------------------" + '\n');
 
 
-            //mask
-            int work_days = 0b011111;
-
-            int Monday = 0b010001;
-            int Tuesday = 0b010100;
-            int Wednesday = 0b010000;
-            int Thursday = 0b010111;
-            int Friday = 0b010111;
-            int Saturday = 0b010111;
-            int Sunday = 0b010111;
-
-            int office_1 = work_days & Tuesday & Wednesday & Thursday & Friday;
-            int office_2 = work_days & Monday & Tuesday & Wednesday & Thursday & Friday & Saturday & Sunday;
+            
 
 
 
@@ -104,7 +92,8 @@ namespace Lesson_2
 
         }
 
-        public enum week_days {
+        public enum week_days
+        {
             Monday = 0b010001,
             Tuesday = 0b010100,
             Wednesday = 0b010000,
