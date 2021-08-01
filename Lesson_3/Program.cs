@@ -69,14 +69,30 @@ namespace Lesson_3
                 //var t = tekst[i-1];
                 Console.Write(tekst[i-1]);
             }
-            // end task 3
+            Console.WriteLine("-----"+'\n');
 
 
-
-
+            Console.WriteLine("Start  Battleship"+'\n');
+            char[,] array_war = new char[10, 10];
+            for (int i = 0; i < array_war.GetLength(0); i++)
+            {
+                for (int j = 0; j < array_war.GetLength(0); j++)
+                {
+                    Console.Write(GetRandomCharacter("XO", rd));
+                }
+                Console.WriteLine();
+            }
 
 
 
         }
+        public static char GetRandomCharacter(string text, Random rng)
+        {
+            int index = rng.Next(text.Length);
+            return text[index];
+        }
+        // end task 3
+
     }
+
 }
