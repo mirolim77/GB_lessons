@@ -22,7 +22,7 @@ namespace Lesson_4
             }
 
 
-            //star task 2
+            //start task 2
             Console.WriteLine("Start task #2");
             string filter_tekst = "";
             filter_tekst=Console.ReadLine();
@@ -43,6 +43,7 @@ namespace Lesson_4
             //end task 2
 
             //stat task 3
+            Console.WriteLine("Start task #3");
             string Seasons_number = Console.ReadLine();
             Console.WriteLine("Session name is: "+  GetSeasonsName(Seasons_number));
             //end task 3
@@ -68,6 +69,7 @@ namespace Lesson_4
             string patronymic = Console.ReadLine();
             return (firstName, lastName, patronymic);
         }
+
 
         public static string GetSeasonsName(string id)
         {
