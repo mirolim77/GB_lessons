@@ -22,6 +22,28 @@ namespace Lesson_4
             }
 
 
+            //task 2
+            string filter_tekst = "";
+            filter_tekst=Console.ReadLine();
+            int space = 0; int digitels = 0;
+            foreach (var item in filter_tekst)
+            {
+                    if(item==' ')
+                    {
+                    space++;
+                    }
+                 else  if(Char.IsDigit(item)){
+                    digitels++;
+                    }
+            }
+
+            Console.WriteLine("Tekst lenght is: " + filter_tekst.Length+ "\n  space simbols in tekst: "+ space+ 
+                " Count Digit simbols in tekst is: " + digitels);
+
+
+
+
+
         }
 
 
