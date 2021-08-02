@@ -22,7 +22,7 @@ namespace Lesson_4
             }
 
 
-            //task 2
+            //star task 2
             string filter_tekst = "";
             filter_tekst=Console.ReadLine();
             int space = 0; int digitels = 0;
@@ -39,9 +39,12 @@ namespace Lesson_4
 
             Console.WriteLine("Tekst lenght is: " + filter_tekst.Length+ "\n  space simbols in tekst: "+ space+ 
                 " Count Digit simbols in tekst is: " + digitels);
+            //end task 2
 
-
-
+            //stat task 3
+            string Seasons_number = Console.ReadLine();
+            Console.WriteLine("Session name is: "+  GetSeasonsName(Seasons_number));
+            //end task 3
 
 
         }
@@ -64,11 +67,31 @@ namespace Lesson_4
             string patronymic = Console.ReadLine();
             return (firstName, lastName, patronymic);
         }
-        enum FullName
+
+        public static string GetSeasonsName(string id)
         {
-            firstName,
-            lastName,
-            patronymic,
+            
+            try
+            {
+                int reult = 0;
+                var isNumeric = int.TryParse(id, out  reult);               
+                    Seasons s = (Seasons)reult;
+                    return s.ToString();
+                 
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Input symbol is not digitel!");
+            }
+
+            return null;
+        }
+        enum Seasons
+        {
+            Winter=1,
+            Spring=2,
+            Summer=3,
+            Autumn=4
         }
 
     }
