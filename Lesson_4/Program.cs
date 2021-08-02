@@ -48,6 +48,19 @@ namespace Lesson_4
             Console.WriteLine("Session name is: "+  GetSeasonsName(Seasons_number));
             //end task 3
 
+            //start task 4
+            Console.WriteLine("Please enter for Fibonacci  number");
+            int number = Convert.ToInt32(Console.ReadLine());
+            Fibonachi(0, 1, 1, number);
+            //end task 4
+
+
+            //start task4
+            Console.WriteLine("Start task #5");
+            String str1 = " Предложение один Теперь предложение два Предложение три";
+            String correctString = str1.Replace("один", "один.").Replace("два", "два.").Replace("три", "три.");
+            Console.WriteLine(correctString);
+
 
         }
 
@@ -85,16 +98,16 @@ namespace Lesson_4
                     if (reult <= 3)
                     {
                         Seasons s = (Seasons)1;
-                        return s.ToString();
+                        return s.ToString()+ " mounth: "+m.ToString();
                     }else if (reult >= 3 && reult<=6)
                     {
                         Seasons s = (Seasons)2;
-                        return s.ToString();
+                        return s.ToString() + " mounth: " + m.ToString();
                     }
                     else if (reult >= 6 && reult <= 9)
                     {
                         Seasons s = (Seasons)3;
-                        return s.ToString();
+                        return s.ToString() + " mounth: " + m.ToString();
                     }
                     else
                     {
@@ -129,6 +142,12 @@ namespace Lesson_4
             Autumn=4
         }
 
+
+        public static void Fibonachi(int a, int b, int counter, int number)
+        {
+            Console.WriteLine(a);
+            if (counter < number) Fibonachi(b, a + b, counter + 1, number);
+        }
     }
 
 
