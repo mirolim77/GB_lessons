@@ -25,27 +25,28 @@ namespace Lesson_4
             //start task 2
             Console.WriteLine("Start task #2");
             string filter_tekst = "";
-            filter_tekst=Console.ReadLine();
+            filter_tekst = Console.ReadLine();
             int space = 0; int digitels = 0;
             foreach (var item in filter_tekst)
             {
-                    if(item==' ')
-                    {
+                if (item == ' ')
+                {
                     space++;
-                    }
-                 else  if(Char.IsDigit(item)){
+                }
+                else if (Char.IsDigit(item))
+                {
                     digitels++;
-                    }
+                }
             }
 
-            Console.WriteLine("Tekst lenght is: " + filter_tekst.Length+'\n'+ " space simbols in tekst: " +  space+ '\n' +
-                " Count Digit simbols in tekst is: "  + digitels + '\n' + "Tekst lenght is: "+ filter_tekst.Length + '\n');
+            Console.WriteLine("Tekst lenght is: " + filter_tekst.Length + '\n' + " space simbols in tekst: " + space + '\n' +
+                " Count Digit simbols in tekst is: " + digitels + '\n' + "Tekst lenght is: " + filter_tekst.Length + '\n');
             //end task 2
 
             //stat task 3
             Console.WriteLine("Start task #3");
             string Seasons_number = Console.ReadLine();
-            Console.WriteLine("Session name is: "+  GetSeasonsName(Seasons_number));
+            Console.WriteLine("Session name is: " + GetSeasonsName(Seasons_number));
             //end task 3
 
             //start task 4
@@ -86,20 +87,21 @@ namespace Lesson_4
 
         public static string GetSeasonsName(string id)
         {
-            
+
             try
             {
                 int reult = 0;
-               // int mNum = 0;
-                var isNumeric = int.TryParse(id, out  reult);
+                // int mNum = 0;
+                var isNumeric = int.TryParse(id, out reult);
                 Mounths m = (Mounths)reult;
-                 if(reult<=12)
+                if (reult <= 12)
                 {
                     if (reult <= 3)
                     {
                         Seasons s = (Seasons)1;
-                        return s.ToString()+ " mounth: "+m.ToString();
-                    }else if (reult >= 3 && reult<=6)
+                        return s.ToString() + " mounth: " + m.ToString();
+                    }
+                    else if (reult >= 3 && reult <= 6)
                     {
                         Seasons s = (Seasons)2;
                         return s.ToString() + " mounth: " + m.ToString();
@@ -122,8 +124,8 @@ namespace Lesson_4
                 {
                     Console.WriteLine("Error: Please enter a number between 1 and 12");
                 }
-                   
-                 
+
+
             }
             catch (Exception e)
             {
@@ -134,16 +136,16 @@ namespace Lesson_4
         }
 
         enum Mounths
-        {            
-            jenuary=1,fevral=2,mart=3,april=4,may=5,june=6,july=7,
-            avgust=8,september=9,octamber=10,november=11,december=12
+        {
+            jenuary = 1, fevral = 2, mart = 3, april = 4, may = 5, june = 6, july = 7,
+            avgust = 8, september = 9, octamber = 10, november = 11, december = 12
         }
         enum Seasons
         {
-            Winter=1,
-            Spring=2,
-            Summer=3,
-            Autumn=4
+            Winter = 1,
+            Spring = 2,
+            Summer = 3,
+            Autumn = 4
         }
 
 
