@@ -23,6 +23,7 @@ namespace Lesson_4
 
 
             //star task 2
+            Console.WriteLine("Start task #2");
             string filter_tekst = "";
             filter_tekst=Console.ReadLine();
             int space = 0; int digitels = 0;
@@ -37,8 +38,8 @@ namespace Lesson_4
                     }
             }
 
-            Console.WriteLine("Tekst lenght is: " + filter_tekst.Length+ "\n  space simbols in tekst: "+ space+ 
-                " Count Digit simbols in tekst is: " + digitels);
+            Console.WriteLine("Tekst lenght is: " + filter_tekst.Length+'\n'+ " space simbols in tekst: " +  space+ '\n' +
+                " Count Digit simbols in tekst is: "  + digitels + '\n' + "Tekst lenght is: "+ filter_tekst.Length + '\n');
             //end task 2
 
             //stat task 3
@@ -74,9 +75,35 @@ namespace Lesson_4
             try
             {
                 int reult = 0;
-                var isNumeric = int.TryParse(id, out  reult);               
-                    Seasons s = (Seasons)reult;
-                    return s.ToString();
+               // int mNum = 0;
+                var isNumeric = int.TryParse(id, out  reult);
+                Mounths m = (Mounths)reult;
+                 if(reult<=12)
+                {
+                    if (reult <= 3)
+                    {
+                        Seasons s = (Seasons)1;
+                        return s.ToString();
+                    }else if (reult >= 3 && reult<=6)
+                    {
+                        Seasons s = (Seasons)2;
+                        return s.ToString();
+                    }
+                    else if (reult >= 6 && reult <= 9)
+                    {
+                        Seasons s = (Seasons)3;
+                        return s.ToString();
+                    }
+                    else
+                    {
+                        Seasons s = (Seasons)4;
+                        return s.ToString();
+                    }
+
+
+
+                }
+                   
                  
             }
             catch (Exception e)
@@ -85,6 +112,12 @@ namespace Lesson_4
             }
 
             return null;
+        }
+
+        enum Mounths
+        {            
+            jenuary=1,fevral=2,mart=3,april=4,may=5,june=6,july=7,
+            avgust=8,september=9,octamber=10,november=11,december=12
         }
         enum Seasons
         {
