@@ -49,7 +49,7 @@ namespace Lesson_4
             //end task 3
 
             //start task 4
-            Console.WriteLine("Please enter for Fibonacci  number");
+            Console.WriteLine("start task 4:  Please enter for Fibonacci  number");
             int number = Convert.ToInt32(Console.ReadLine());
             Fibonachi(0, 1, 1, number);
             //end task 4
@@ -118,12 +118,16 @@ namespace Lesson_4
 
 
                 }
+                else
+                {
+                    Console.WriteLine("Error: Please enter a number between 1 and 12");
+                }
                    
                  
             }
             catch (Exception e)
             {
-                Console.WriteLine("Input symbol is not digitel!");
+                Console.WriteLine("Error: Please enter a number between 1 and 12");
             }
 
             return null;
