@@ -12,23 +12,22 @@ namespace Lesson_4
 
             for (int i = 0; i < fulNames.Length; i++)
             {
+                (string userName, string lastName, string patronymic) = InputGetName();
                 for (int j = 0; j < fulNames.GetLength(1); j++)
                 {
-                    (string userName, string lastName, string patronymic) = InputGetName();
-
-                    switch (j)
-                    {
-                        case 0: fulNames[i, j] = userName; break;
-                        case 1: fulNames[i, j] = lastName; break;
-                        case 2: fulNames[i, j] = patronymic; break;
-                        default:
-                            break;
-                    }
-
-
-
+                    fulNames[i,j] = userName + " " + lastName + " " + patronymic;
                 }
+
             }
+          
+                
+                    
+
+                     
+
+
+               
+          
 
 
 

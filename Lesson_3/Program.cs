@@ -22,7 +22,11 @@ namespace Lesson_3
             {
                 for (int j = 0; j < arrayy.GetLength(1); j++)
                 {
-                    Console.Write("array[" + i + "][" + j + "]= " + arrayy[i, j] + ";  ");
+                    if (i == j)
+                    {
+                        Console.Write("array[" + i + "][" + j + "]= " + arrayy[i, j] + ";  ");
+                    }
+                   
                 }
             }
             Console.WriteLine('\n');
