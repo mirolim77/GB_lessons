@@ -6,29 +6,20 @@ namespace Lesson_4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
 
             string[,] fulNames = new string[2, 3];
 
-            for (int i = 0; i < fulNames.Length; i++)
+            for (int i = 0; i < fulNames.Length / 3; i++)
             {
-                (string userName, string lastName, string patronymic) = InputGetName();
-                for (int j = 0; j < fulNames.GetLength(1); j++)
-                {
-                    fulNames[i,j] = userName + " " + lastName + " " + patronymic;
-                }
-
+                (fulNames[i, 0], fulNames[i, 1], fulNames[i, 2]) = InputGetName();
             }
-          
-                
-                    
 
-                     
+            Console.WriteLine();
 
-
-               
-          
-
+            for (int i = 0; i < fulNames.Length / 3; i++)
+            {
+                Console.WriteLine(GetFullName(fulNames[i, 0], fulNames[i, 1], fulNames[i, 2]));
+            }
 
 
         }
@@ -37,7 +28,7 @@ namespace Lesson_4
 
         public static string GetFullName(string firstName, string lastName, string patronymic)
         {
-            return firstName + " " + lastName + " " + patronymic;
+            return "Firstname: " + firstName + " LastName: " + lastName + " patronymic: " + patronymic;
 
         }
 
