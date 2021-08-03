@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lesson_5
 {
@@ -11,25 +7,33 @@ namespace Lesson_5
         String FullName;
         String Phonenumber;
         String Mailbox;
+        String Position;
         int Salary;
         int Age;
 
-        public Employees(string _FullName, string _phonenumber, string _mailbox, int _salary,int _age)
+
+
+        public Employees(string _FullName, string _phonenumber, string _mailbox, string _position, int _salary, int _age)
         {
-            FullName = _FullName; 
+            FullName = _FullName;
             Phonenumber = _phonenumber;
             Mailbox = _mailbox;
-            Salary=_salary;
-            Age=_age;
+            Position = _position;
+            Salary = _salary;
+            Age = _age;
         }
 
-        
+        public int GetEmploerAge()
+        {
+            return this.Age;
+        }
         public void GetEmployersToConsole()
         {
-            Console.WriteLine("Full name: " + FullName + " Phonenumber: " + Phonenumber + " Mailbox: " + Mailbox +
+            Console.WriteLine("Full name: " + FullName + "Position: " + Position + " Phonenumber: " + Phonenumber + " Mailbox: " + Mailbox +
                 " Salary: " + Salary.ToString() + " Age: " + Age.ToString());
         }
 
-        
+
+
     }
 }

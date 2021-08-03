@@ -127,7 +127,7 @@ namespace Lesson_4
 
 
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 Console.WriteLine("Error: Please enter a number between 1 and 12");
             }
