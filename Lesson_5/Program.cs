@@ -31,7 +31,7 @@ namespace Lesson_5
             byte[] array = { 1, 2, 3, 5, 7, 9, 11 };
             foreach (var item in input_binary)
             {
-                if(Char.IsDigit(item))
+                if(Char.IsDigit(item) && 0<=255)
                 {
                     binary_array.Append(Convert.ToByte(item));
                 }
