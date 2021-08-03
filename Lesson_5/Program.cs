@@ -13,8 +13,9 @@ namespace Lesson_5
 
         static void Main(string[] args)
         {
-           
-            //start task 1            
+
+            //start task 1
+            Console.WriteLine("Input some text for text");
             File.WriteAllText("text.txt", Console.ReadLine()); // записываем в файл строку
             //end task 1
 
@@ -23,6 +24,7 @@ namespace Lesson_5
             //end task2
 
             //start task 3
+            Console.WriteLine("Input some text for bytes.bin");
             string input_binary=Console.ReadLine();
             byte[] binary_array = new byte[input_binary.Length];
 
@@ -35,10 +37,12 @@ namespace Lesson_5
                 }
             }
             File.WriteAllBytes("bytes.bin", binary_array);
-           //end task 3
+            //end task 3
 
 
- 
+            //start task 4
+            Employees person = new Employees("Pupkin", "8-85-885-88-89", "pupkin@mail.ru", 1000, 44);
+            person.GetEmployersToConsole();
 
         }
         
