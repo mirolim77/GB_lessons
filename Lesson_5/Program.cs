@@ -45,7 +45,7 @@ namespace Lesson_5
             person.GetEmployersToConsole();
 
 
-            Employees[] persons = new Employees[7];
+            Employees[] persons = new Employees[8];
             persons[0] = new Employees("Pupkin", "8-85-885-88-89", "pupkin@mail.ru", "Developer", 1000, 50);
             persons[1] = new Employees("Aupkin", "8-85-885-88-89", "dutkin@mail.ru", "Developer", 1000, 18);
             persons[2] = new Employees("Bupkin", "8-85-885-88-89", "butkin@mail.ru", "Developer", 1000, 45);
@@ -55,8 +55,11 @@ namespace Lesson_5
             persons[6] = new Employees("Lupkin", "8-85-885-88-89", "lupkin@mail.ru", "Developer", 1000, 22);
             persons[7] = new Employees("Kupkin", "8-85-885-88-89", "kupkin@mail.ru", "Developer", 1000, 31);
 
+
+
             EmployeesArrray e = new EmployeesArrray();
-            //e.SortEmployersByAgeToConsole(persons,40);
+            e.SortEmployersByAgeToConsole(persons, 40);
+ 
 
 
             
