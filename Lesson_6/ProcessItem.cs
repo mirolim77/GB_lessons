@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace Lesson_6
 {
-    class Process
+    class ProcessItem
     {
         string ProcessName;
         int ProcessID;
         int ProcessUseMemory;
     }
+
+
+
+
 }
