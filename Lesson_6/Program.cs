@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Management;
 
-// dividebyzeroexception - исключение, деление на 0
+ // dividebyzeroexception - исключение, деление на 0
 // argumentexception — исключение, которое возникает, когда среди передаваемых методу аргументов есть недопустимые.
 // arithmeticexception — исключение, которое возникает при ошибках операций арифметического приведения или преобразования.
 // accessviolationexception — исключение, которое возникает при попытке чтения или записи в защищённую область памяти.
@@ -83,33 +83,56 @@ namespace Lesson_6
             {
                 Console.WriteLine(e.Message);
             }
+            Console.WriteLine("end task 1");
+
+            Console.ReadKey();
+            Random r = new Random();
+            int[,] SomeArray = new int[4, 4];
+            for (int i = 0; i < SomeArray.GetLength(0); i++)
+            {
+                for (int j = 0; j < SomeArray.GetLength(1); j++)
+                {
+                    try
+                    {
+                        SomeArray[i, j] =Int32.Parse(GetRandomCharacter(4,r));
+                        Console.Write(String.Format("{0}\t", (SomeArray[i, j])));
+
+                    }
+                    catch (Exception)
+                    {
+
+                        throw;
+                    }
+                    
+                }
+                Console.Write(Environment.NewLine + Environment.NewLine);
+            }
+
+
+
+
+
+
+         
+
+
+
+
+
+
+
+
 
 
 
             //Process notepad = Process.Start("tasklist.exe");
             //notepad.StartInfo.Arguments = "/v txt > task.txt";
-
             //notepad.StartInfo.UseShellExecute = false;
             //notepad.StartInfo.RedirectStandardOutput = true;
-
-
-
-
             //Console.WriteLine("Нажмите любую клавишу для завершения процесса...");
             //Console.ReadKey();
-
-
-
-
-
-
             //notepad.Kill();
             //Console.WriteLine(notepad.ExitCode); // -1
-
-
-
-
-
             //process processkiller = new process();
             //processkiller.startinfo.filename = "taskkill.exe";
             //processkiller.startinfo.arguments = "-pid "+13660;
@@ -139,6 +162,15 @@ namespace Lesson_6
             }
 
         }
+
+        public static string GetRandomCharacter(int length, Random rng)
+        {
+            const string chars = "A1234567890";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[rng.Next(s.Length)]).ToArray());
+
+        }
+
 
 
 
