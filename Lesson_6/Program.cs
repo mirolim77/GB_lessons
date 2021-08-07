@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Management;
-using System.Text;
 
 // dividebyzeroexception - исключение, деление на 0
 // argumentexception — исключение, которое возникает, когда среди передаваемых методу аргументов есть недопустимые.
@@ -37,19 +34,19 @@ using System.Text;
 
 namespace Lesson_6
 {
-     public static class Program
+    public static class Program
     {
         static void Main(string[] args)
         {
             try
             {
 
-            Process[] processlist = Process.GetProcesses();
-            foreach (Process theprocess in processlist)
-            {
-                Console.WriteLine("Process: {0} ID: {1}  Memory: {2} ", theprocess.ProcessName, theprocess.Id, theprocess.PagedSystemMemorySize64);
-            }
-
+                Process[] processlist = Process.GetProcesses();
+                foreach (Process theprocess in processlist)
+                {
+                    Console.WriteLine("Process: {0} ID: {1}  Memory: {2} ", theprocess.ProcessName, theprocess.Id, theprocess.PagedSystemMemorySize64);
+                }
+                Console.WriteLine('\n');
                 Console.WriteLine("Input process id or name: ");
                 string inputCommand = Console.ReadLine();
                 string info = "";
@@ -58,10 +55,10 @@ namespace Lesson_6
                     ProcessKiller.StartInfo.FileName = (@"C:\Windows\System32\taskkill.exe");
 
                     if (Char.IsDigit(inputCommand[0]))
-                    {                     
+                    {
                         try
                         {
-                             
+
                             ProcessKiller.StartInfo.Arguments = " /PID " + inputCommand;
                             info = "PID: ";
                         }
@@ -79,8 +76,8 @@ namespace Lesson_6
                     ProcessKiller.StartInfo.UseShellExecute = false;
                     ProcessKiller.StartInfo.RedirectStandardOutput = true;
                     ProcessKiller.Start();
-                    Console.WriteLine("ProcessKiller is killed PID: {0} Name {1}"+ " "+ inputCommand);
-                }               
+                    Console.WriteLine("ProcessKiller is killed " + info + " " + inputCommand);
+                }
             }
             catch (Exception e)
             {
@@ -125,7 +122,7 @@ namespace Lesson_6
 
         }
 
-       
+
 
 
 
@@ -136,7 +133,9 @@ namespace Lesson_6
             using (ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT CommandLine FROM Win32_Process WHERE ProcessId = " + process.Id))
             using (ManagementObjectCollection objects = searcher.Get())
             {
-                return objects.Cast<ManagementBaseObject>().SingleOrDefault()?["CommandLine"]?.ToString();
+                #pragma warning disable CA1416 // Проверка совместимости платформы
+                                return objects.Cast<ManagementBaseObject>().SingleOrDefault()?["CommandLine"]?.ToString();
+                #pragma warning restore CA1416 // Проверка совместимости платформы
             }
 
         }
