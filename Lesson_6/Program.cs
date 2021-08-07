@@ -41,28 +41,6 @@ namespace Lesson_6
     {
         static void Main(string[] args)
         {
-
-
-
-            try
-            {
-                using (Process myProcess = new Process())
-                {
-                    
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-
-
-
-
-
-
-
-
             try
             {
 
@@ -74,14 +52,18 @@ namespace Lesson_6
 
                 Console.WriteLine("Input process id or name: ");
                 string inputCommand = Console.ReadLine();
-                using (Process ProcessKiller = Process.Start("taskkill.exe"))
+                string info = "";
+                using (Process ProcessKiller = new Process())
                 {
+                    ProcessKiller.StartInfo.FileName = (@"C:\Windows\System32\taskkill.exe");
+
                     if (Char.IsDigit(inputCommand[0]))
                     {                     
                         try
                         {
-                            // Process ProcessKiller = Process.Start("taskkill.exe");
+                             
                             ProcessKiller.StartInfo.Arguments = " /PID " + inputCommand;
+                            info = "PID: ";
                         }
                         catch (Exception p)
                         {
@@ -91,7 +73,13 @@ namespace Lesson_6
                     else
                     {
                         ProcessKiller.StartInfo.Arguments = " /IM " + inputCommand;
+                        info = "Name: ";
                     }
+
+                    ProcessKiller.StartInfo.UseShellExecute = false;
+                    ProcessKiller.StartInfo.RedirectStandardOutput = true;
+                    ProcessKiller.Start();
+                    Console.WriteLine("ProcessKiller is killed PID: {0} Name {1}"+ " "+ inputCommand);
                 }               
             }
             catch (Exception e)
@@ -140,12 +128,6 @@ namespace Lesson_6
        
 
 
-        static void ShowAllprocessAndLog()
-        {
-             
-            Process notepad = Process.Start("tasklist.exe");
-            
-        }
 
 
 
