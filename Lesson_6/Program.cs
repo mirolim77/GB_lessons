@@ -101,7 +101,7 @@ namespace Lesson_6
                     catch (Exception)
                     {
 
-                        throw;
+                        throw new Exception();
                     }
                     
                 }
