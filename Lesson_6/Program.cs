@@ -98,10 +98,10 @@ namespace Lesson_6
                         Console.Write(String.Format("{0}\t", (SomeArray[i, j])));
 
                     }
-                    catch (Exception)
+                    catch (MyArrayDataException ex ) when   (ex.Code ==ErrorCodes.ItIsNotInt)
                     {
 
-                        throw new Exception();
+                        Console.Write("array contains a non-numeric element!");
                     }
                     
                 }
