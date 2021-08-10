@@ -94,9 +94,9 @@ namespace Lesson_7
                 int sum = 1;
                 for (int i = 0; i < field.GetLength(0); i++)
                 {
-                    for (int j = 0; j < field.GetLength(1)-1; j++)
+                    for (int j = 0; j < field.GetLength(1) - 1; j++)
                     {
-                        if (field[i,j] == field[i,j+1] && field[i,j]== sym)
+                        if (field[i, j] == field[i, j + 1] && field[i, j] == sym)
                         {
                             sum++;
                         }
@@ -118,11 +118,11 @@ namespace Lesson_7
             private static bool CheckWinNew(char sym)
             {
                 int sum = 1;
-                for (int i = 0; i < field.GetLength(0)- 1; i++)
+                for (int i = 0; i < field.GetLength(0) - 1; i++)
                 {
-                    for (int j = 0; j < field.GetLength(1) ; j++)
+                    for (int j = 0; j < field.GetLength(1); j++)
                     {
-                        if (field[i, j] == field[i + 1, j ] && field[i, j] == sym)
+                        if (field[i, j] == field[i + 1, j] && field[i, j] == sym)
                         {
                             sum++;
                         }
