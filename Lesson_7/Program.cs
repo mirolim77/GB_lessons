@@ -89,6 +89,59 @@ namespace Lesson_7
                 } while (!IsCellValid(y, x));
                 SetSym(y, x, PLAYER_DOT);
             }
+            private static bool CheckWinNew1(char sym)
+            {
+                int sum = 1;
+                for (int i = 0; i < field.GetLength(0); i++)
+                {
+                    for (int j = 0; j < field.GetLength(1)-1; j++)
+                    {
+                        if (field[i,j] == field[i,j+1] && field[i,j]== sym)
+                        {
+                            sum++;
+                        }
+                        else
+                        {
+                            sum = 1;
+                            break;
+                        }
+                    }
+                    if (sum >= 3)
+                    {
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+
+            private static bool CheckWinNew(char sym)
+            {
+                int sum = 1;
+                for (int i = 0; i < field.GetLength(0)- 1; i++)
+                {
+                    for (int j = 0; j < field.GetLength(1) ; j++)
+                    {
+                        if (field[i, j] == field[i + 1, j ] && field[i, j] == sym)
+                        {
+                            sum++;
+                        }
+                        //else
+                        //{
+                        //    sum = 1;
+                        //    break;
+                        //}
+                    }
+                    if (sum >= 3)
+                    {
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+
+
 
             private static bool CheckWin(char sym)
             {
@@ -150,7 +203,7 @@ namespace Lesson_7
                     playerMove();
                     Console.WriteLine("Ваш ход на поле");
                     PrintField();
-                    if (CheckWin(PLAYER_DOT))
+                    if (CheckWinNew(PLAYER_DOT))
                     {
                         Console.WriteLine("Вы выиграли");
                         break;
@@ -159,7 +212,7 @@ namespace Lesson_7
                     AiMove();
                     Console.WriteLine("Ход Компа на поле");
                     PrintField();
-                    if (CheckWin(AI_DOT))
+                    if (CheckWinNew(AI_DOT))
                     {
                         Console.WriteLine("Выиграли Комп");
                         break;
