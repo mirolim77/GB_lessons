@@ -6,8 +6,8 @@ namespace Lesson_7
     {
         class Cross
         {
-            static int SIZE_X = 3;
-            static int SIZE_Y = 3;
+            static int SIZE_X = 5;
+            static int SIZE_Y = 5;
 
             static char[,] field = new char[SIZE_Y, SIZE_X];
 
@@ -89,7 +89,7 @@ namespace Lesson_7
                 } while (!IsCellValid(y, x));
                 SetSym(y, x, PLAYER_DOT);
             }
-            private static bool CheckWinNew1(char sym)
+            private static bool CheckWinX(char sym)
             {
                 int sum = 1;
                 for (int i = 0; i < field.GetLength(0); i++)
@@ -106,7 +106,7 @@ namespace Lesson_7
                             break;
                         }
                     }
-                    if (sum >= 3)
+                    if (sum >= SIZE_X)
                     {
                         return true;
                     }
@@ -115,7 +115,7 @@ namespace Lesson_7
                 return false;
             }
 
-            private static bool CheckWinNew(char sym)
+            private static bool CheckWinY(char sym)
             {
                 int sum = 1;
                 for (int i = 0; i < field.GetLength(0) - 1; i++)
@@ -132,7 +132,7 @@ namespace Lesson_7
                         //    break;
                         //}
                     }
-                    if (sum >= 3)
+                    if (sum >= SIZE_Y)
                     {
                         return true;
                     }
@@ -140,6 +140,25 @@ namespace Lesson_7
 
                 return false;
             }
+
+            private static bool CheckWinXY(char sym)
+            {
+                int sum = 1;
+                for (int j=0,i = 0; i < field.GetLength(0)-1; i++,j++)
+                {                   
+                        if (field[i, j] == field[i + 1, j+1] && field[i, j] == sym)
+                        {
+                            sum++;
+                        }
+                    if (sum >= SIZE_Y)
+                    {
+                        return true;
+                    }
+                }
+
+                return false;
+            }
+
 
 
 
@@ -203,7 +222,7 @@ namespace Lesson_7
                     playerMove();
                     Console.WriteLine("Ваш ход на поле");
                     PrintField();
-                    if (CheckWinNew(PLAYER_DOT))
+                    if (CheckWinXY(PLAYER_DOT))
                     {
                         Console.WriteLine("Вы выиграли");
                         break;
@@ -212,7 +231,7 @@ namespace Lesson_7
                     AiMove();
                     Console.WriteLine("Ход Компа на поле");
                     PrintField();
-                    if (CheckWinNew(AI_DOT))
+                    if (CheckWinXY(AI_DOT))
                     {
                         Console.WriteLine("Выиграли Комп");
                         break;
